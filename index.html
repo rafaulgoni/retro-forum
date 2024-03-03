@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header class="container mx-auto">
+    <header class="container mx-auto lg:mt-5">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
               <div class="dropdown">
@@ -27,10 +27,10 @@
             </div>
             <div class="navbar-center hidden lg:flex">
               <ul class="menu menu-horizontal px-1 gap-x-2">
-                <li><a class="bg-gray-200 rounded-full p-2" style="border: 1px solid rgba(3, 7, 18, 0.10);"><img src="images/four.svg" alt=""></a></li>
-                <li><a class="bg-gray-200 rounded-full p-2" style="border: 1px solid rgba(3, 7, 18, 0.10);"><img src="images/one.svg" alt=""></a></li>
-                <li><a class="bg-gray-200 rounded-full p-2" style="border: 1px solid rgba(3, 7, 18, 0.10);"><img src="images/two.svg" alt=""></a></li>
-                <li><a class="bg-gray-200 rounded-full p-2" style="border: 1px solid rgba(3, 7, 18, 0.10);"><img src="images/three.svg" alt=""></a></li>
+                <li class="tooltip" data-tip="Home"><a class="bg-gray-200 rounded-full p-2" style="border: 1px solid rgba(3, 7, 18, 0.10);"><img src="images/four.svg" alt=""></a></li>
+                <li class="tooltip" data-tip="Post"><a class="bg-gray-200 rounded-full p-2" style="border: 1px solid rgba(3, 7, 18, 0.10);"><img src="images/one.svg" alt=""></a></li>
+                <li class="tooltip" data-tip="Requests"><a class="bg-gray-200 rounded-full p-2" style="border: 1px solid rgba(3, 7, 18, 0.10);"><img src="images/two.svg" alt=""></a></li>
+                <li class="tooltip" data-tip="Reports"><a class="bg-gray-200 rounded-full p-2" style="border: 1px solid rgba(3, 7, 18, 0.10);"><img src="images/three.svg" alt=""></a></li>
               </ul>
             </div>
             <div class="navbar-end">
@@ -52,8 +52,8 @@
               <h1 class="text-5xl font-extrabold text-white font-mulish">Welcome to the <br><samp style="background: linear-gradient(90deg, #797DFC 0.63%, rgba(121, 125, 252, 0.00) 41%);" class="text-[#797DFC]">ReTro</samp> Forum</h1>
               <p class="lg:py-6 text-white font-extralight font-mulish">Share your favorite opinion and win and wp forum coffee mug!</p>
               <div class="flex">
-              <input type="text" placeholder="Search here anything" class="w-full h-14 max-w-xs p-3 rounded-l-full"/>
-              <button class="rounded-r-full text-white h-14 bg-[#797DFC] p-3 border-none">Search</button>
+              <input type="text" placeholder="Search here anything" id="search-box" class="w-full h-14 max-w-xs p-3 rounded-l-full"/>
+              <button onclick="handleSearch()" class="btn rounded-r-full text-white h-14 bg-[#797DFC] p-3 border-none">Search</button>
              </div>
             </div>
           </div>
@@ -64,16 +64,24 @@
           <h1 class="text-black text-4xl font-extrabold">Let’s Discuss</h1>
           <p class="font-extralight font-mulish max-w-[500px] mx-auto">"Let's discuss the possibilities that lie beyond our current understanding, where ideas flourish and innovation thrives."</p>
         </div>
-        <div>
-          <div>
+        </section>
+        <section class="container mx-auto lg:min-h-screen bg-white rounded-t-3xl mt-8 p-8">
+          <nav class="grid lg:grid-cols-2">
+            <nav class="space-y-6" id="show-news">
+            </nav>
+            <nav class="space-y-6 lg:pl-8 mt-8 lg:mt-0">
+              <div class="min-h-[55px] w-[w-433px] bg-gray-200 rounded-2xl p-8 space-y-4">
+                <div class="flex justify-between">
+                  <h1 class="text-xl font-bold">Title</h1>
+                  <button class="flex"><img src="images/tikmark.svg" alt="">Mark as read (04)</button>
+                </div>
+                <div id="btn-click">
 
-
-          </div>
-          <div>
-
-
-          </div>
-        </div>
+                </div>
+              </div>
+            </nav>
+          </nav>
+        </section>
       </section>
       <section class="mb-[50px] lg:mb-[100px]">
         <div class="hero bg-[#12132D] rounded-3xl mt-[50px] lg:mt-[100px]">
@@ -85,7 +93,7 @@
               <button class="btn bg-[#797DFC] rounded-full text-white border-none">Registered Now</button>
             </div>
           </div>
-        </div>
+        </section>
       </section>
       <section>
         <div class="text-center space-y-5 mb-[20px] lg:mb-[40px]">

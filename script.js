@@ -29,14 +29,18 @@ const newsCard = async () =>{
     `;
     showNews.appendChild(div);
     });
-}   
+} 
+let countNum = 0;  
 const buttonOutput= async()=>{
     const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts");
     const data = await res.json();
     const buttonClick = document.getElementById('btn-click');
     const div = document.createElement('div');
-    data.posts.forEach (item =>{
+    const countNumber = document.getElementById("number-count"); 
+    data.posts.forEach (item =>{ 
     
+    countNum++;
+
     div.innerHTML = `
             <div class="flex bg-[#fff] shadow-xl p-6 mb-4 rounded-md justify-around">
                 <p class="font-bold">${item.title}</p>

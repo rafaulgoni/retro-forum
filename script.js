@@ -1,8 +1,10 @@
 const newsCard = async () =>{
+    document.getElementById("loading-spinar").style.display = "block";
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
     const data = await res.json();
     const showNews = document.getElementById('show-news')
     data.posts.forEach((news) => {
+        document.getElementById("loading-spinar").style.display = "none";
     const div =document.createElement('div');
     div.classList = `card lg:card-side bg-base-100 shadow-xl`;
     div.innerHTML =`
@@ -48,11 +50,13 @@ const buttonOutput= async()=>{
 }
 
 const searchBer = async (searchText) =>{
+    document.getElementById("loading-spinar").style.display = "block";
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await res.json();
     const showNews = document.getElementById('show-news')
     showNews.textContent ='';
     data.posts.forEach((news) => {
+    document.getElementById("loading-spinar").style.display = "none";
     const div =document.createElement('div');
     div.classList = `card lg:card-side bg-base-100 shadow-xl`;
     div.innerHTML =`

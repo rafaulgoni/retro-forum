@@ -3,3 +3,9 @@
 .font-mulish {
     font-family: "Mulish", sans-serif;
 }
+
+#loading-spinar{
+    text-align: center;
+    display: none;
+    margin: 50px 50px;
+}
